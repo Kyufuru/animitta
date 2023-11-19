@@ -1,0 +1,26 @@
+- Godot 是面向对象的, 节点之间存在继承关系
+- 节点可以包含另一节点, 从而组织成节点树, 构成一个场景
+- 场景以 .tscn 文件的方式保存在游戏目录中
+- 通过实例化的方式, 可以在场景内引用另一场景
+- 在场景面板中, 节点和场景有绘制顺序(与图层类似)
+
+- 脚本语言使用 GdScript
+- GdScript 与 Python 语言基本相同
+    数据类型: int, float, bool, String, Dicts, Array
+    动态类型: var, const
+    静态初始化: var str: String = 'hello'
+    函数: func f(x1: int, x2: String) -> bool:
+        return true
+    控制流: if-else, while, for, continue/break
+    类: class
+- 所有的脚本都必须依附于节点运行
+- 所有节点都是类的实例, 有默认和内置的属性/方法
+- 内置属性/方法以 '_' 开头
+- 常用方法:
+    _ready(): 当节点挂载到节点树时调用
+    _process(delta): 游戏内的每一帧都会调用, delta 为上一帧到当前帧的时长
+    get_node("node/path") 或 $"node/path": 引用其他节点
+
+- 帧率不同, 每秒调用 _process(delta) 的次数也不同
+- 按帧更新的值需要与 delta 相乘, 以抵消不同帧率的影响
+  确保在不同电脑上, 图像的表现是一致的
