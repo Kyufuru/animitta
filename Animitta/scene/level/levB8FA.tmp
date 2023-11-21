@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://xe3mynls6rt1"]
+
+[ext_resource type="PackedScene" uid="uid://bxoc8ebekyptc" path="res://scene/player/player_test.tscn" id="1_lvyxx"]
+[ext_resource type="Script" path="res://scene/level/level_test.gd" id="1_qmriy"]
+[ext_resource type="PackedScene" uid="uid://cn3tdfnt0l826" path="res://scene/object/obj_test.tscn" id="2_fvbmf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cjok"]
+size = Vector2(1280, 730)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_qmriy")
+
+[node name="Map" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map"]
+position = Vector2(640, 355)
+shape = SubResource("RectangleShape2D_6cjok")
+debug_color = Color(0, 0.6, 0.701961, 0.0392157)
+
+[node name="ObjTest" parent="." instance=ExtResource("2_fvbmf")]
+position = Vector2(778, 359)
+
+[node name="Player" parent="." instance=ExtResource("1_lvyxx")]
+position = Vector2(778, 91)
+
+[node name="Effect" type="Node2D" parent="."]
+
+[connection signal="m_act" from="Player" to="." method="_on_player_m_act"]
+[connection signal="s_act" from="Player" to="." method="_on_player_s_act"]

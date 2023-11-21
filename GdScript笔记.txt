@@ -1,9 +1,11 @@
+1. 简介
 - Godot 是面向对象的, 节点之间存在继承关系
 - 节点可以包含另一节点, 从而组织成节点树, 构成一个场景
 - 场景以 .tscn 文件的方式保存在游戏目录中
 - 通过实例化的方式, 可以在场景内引用另一场景
 - 在场景面板中, 节点和场景有绘制顺序(与图层类似)
 
+2. GdScript
 - 脚本语言使用 GdScript
 - GdScript 与 Python 语言基本相同
     数据类型: int, float, bool, String, Dicts, Array
@@ -13,14 +15,63 @@
         return true
     控制流: if-else, while, for, continue/break
     类: class
+
+3. 脚本与节点
 - 所有的脚本都必须依附于节点运行
 - 所有节点都是类的实例, 有默认和内置的属性/方法
 - 内置属性/方法以 '_' 开头
 - 常用方法:
     _ready(): 当节点挂载到节点树时调用
     _process(delta): 游戏内的每一帧都会调用, delta 为上一帧到当前帧的时长
-    get_node("node/path") 或 $"node/path": 引用其他节点
 
+4. 帧与帧时长
 - 帧率不同, 每秒调用 _process(delta) 的次数也不同
 - 按帧更新的值需要与 delta 相乘, 以抵消不同帧率的影响
   确保在不同电脑上, 图像的表现是一致的
+
+5. 输入
+- 用户的按键输入可以由项目的输入映射设置
+- 通过 Input 对象访问输入映射, 从而处理用户的按键输入
+- Input.get_vector(px, nx, py, ny, dead) -> (x, y) 用于判断玩家方向
+
+6. 节点引用
+- 通过 get_node("path/node") 或 $"path/node": 引用其他节点
+- 为节点设置唯一名称访问, 可以使用 %node 简化节点路径
+- 通过 $".." 访问父节点
+
+7. 物理
+- StaticBody2D, CharacterBody2D, RigidBody2D 和 Area2D
+  都是用来表现对象物理和碰撞判定的节点, 这些节点根据速度和方向来移动物体
+- velocity 来更新速度, 使用 move_and_slide() 来更新位置
+- velocity 会自动使用 delta 来计算速度
+- Area2D: 2D 区域节点, 用以检测物体的进入或离开, 可移动(车)
+- StaticBody2D: 2D 静态物体节点, 不可移动(墙)
+- RigidBody2D: 2D 刚体节点, 按物理规律实现物体运动和碰撞(投射物)
+- CharacterBody2D: 2D 角色节点, 由代码控制物体运动和碰撞(人)
+- 所有的物体节点都需要定义碰撞形状子节点, 并且为碰撞形状节点指定形状
+- CollisionShape2D 碰撞形状节点
+- CollisionPolygon2D 碰撞多边形节点
+- 碰撞形状的中心应维持在原点
+
+8. 信号
+- 信号是节点在满足触发条件时, 为通知其他节点触发动作所使用的变量
+- 信号可以在属性面板中的节点项选择, 并将其连接到指定节点的脚本上
+- 计时器是一类用于在指定时间后触发信号的节点
+- 内置信号只能用于单个场景的不同节点, 自定义信号可以在不同场景的节点之间触发
+- 通过 signal x(p) 创建自定义信号, 通过 x.emit(p) 手动触发信号
+
+9. 动态创建场景
+- 基本流程: 创建场景(作为模板) -> 为场景创建实例 -> 将实例添加到节点树中
+- 在创建场景实例前, 需要预加载场景资源:
+    var scn: PackedScene = preload(res)
+- var ins = scn.instantiate() 为场景创建实例
+- add_child(ins) 将实例添加到节点树中
+- randi() 用于随机生成整数
+- Marker2D 节点用于标记实例创建的坐标
+- @export var a 将变量导出, 可以在属性面板上修改该变量
+- 实例发出的信号可以使用 connect(sign_name,func) 进行动态连接
+
+10. 坐标
+- 坐标分为绝对坐标和相对坐标
+- godot 默认使用相对坐标, 即相对于父节点的 x, y 偏移量
+- 使用 global_position 表示绝对坐标
