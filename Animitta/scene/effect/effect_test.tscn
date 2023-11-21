@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dud1r07wxqv37"]
 
 [ext_resource type="Script" path="res://scene/effect/effect_test.gd" id="1_xlhvu"]
-[ext_resource type="Texture2D" uid="uid://cwmqv1i33qyu0" path="res://asset/ef_test.png" id="1_xvelo"]
+[ext_resource type="Texture2D" uid="uid://ncyk6gimyfgj" path="res://asset/test.png" id="2_hjja1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xomwf"]
 radius = 25.0
@@ -12,7 +12,7 @@ script = ExtResource("1_xlhvu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_xvelo")
+texture = ExtResource("2_hjja1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
