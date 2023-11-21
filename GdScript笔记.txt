@@ -75,3 +75,6 @@
 - 坐标分为绝对坐标和相对坐标
 - godot 默认使用相对坐标, 即相对于父节点的 x, y 偏移量
 - 使用 global_position 表示绝对坐标
+
+11. 镜头
+- 使用 Camera2D 创建 2D 镜头, Position Smoothing 控制平滑移动

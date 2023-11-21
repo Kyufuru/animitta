@@ -9,6 +9,10 @@ var can_s_act: bool = true
 signal m_act
 signal s_act
 
+func _physics_process(delta):
+#	position = position.round()
+	pass
+	
 func _process(_delta):
 	# 方向
 	d = Input.get_vector("left","right","up","down")
