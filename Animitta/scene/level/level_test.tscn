@@ -1,22 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://xe3mynls6rt1"]
+[gd_scene load_steps=7 format=3 uid="uid://xe3mynls6rt1"]
 
 [ext_resource type="PackedScene" uid="uid://bxoc8ebekyptc" path="res://scene/player/player_test.tscn" id="1_lvyxx"]
 [ext_resource type="Script" path="res://scene/level/level_test.gd" id="1_qmriy"]
-[ext_resource type="PackedScene" uid="uid://cn3tdfnt0l826" path="res://scene/object/obj_test.tscn" id="2_fvbmf"]
+[ext_resource type="PackedScene" uid="uid://bwaec2nsehod5" path="res://scene/physics/physics.tscn" id="4_30x5h"]
+[ext_resource type="Texture2D" uid="uid://ncyk6gimyfgj" path="res://asset/test.png" id="4_gri6n"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4y8p"]
+resource_name = "test"
+texture = ExtResource("4_gri6n")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_by4f4"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_q4y8p")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qmriy")
 
-[node name="ObjTest" parent="." instance=ExtResource("2_fvbmf")]
-position = Vector2(778, 359)
-
 [node name="Player" parent="." instance=ExtResource("1_lvyxx")]
-position = Vector2(778, 91)
+position = Vector2(671, 72)
+Velocity = 500
+Mass = 20
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 
-[node name="Effect" type="Node2D" parent="."]
+[node name="Physics" parent="." instance=ExtResource("4_30x5h")]
+Gravity = 50
 
-[connection signal="m_act" from="Player" to="." method="_on_player_m_act"]
-[connection signal="s_act" from="Player" to="." method="_on_player_s_act"]
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 4
+tile_set = SubResource("TileSet_by4f4")
+format = 2
+layer_0/tile_data = PackedInt32Array(262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524302, 1, 0, 524304, 1, 0, 524305, 1, 0, 262158, 1, 0, 262159, 1, 0, 196611, 1, 0, 262147, 1, 0, 262146, 1, 0, 262145, 1, 0, 524290, 1, 0)

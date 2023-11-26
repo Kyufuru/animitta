@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cn3tdfnt0l826"]
 
-[ext_resource type="Texture2D" uid="uid://ncyk6gimyfgj" path="res://asset/test.png" id="1_hywrq"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j2g33"]
+load_path = "res://.godot/imported/test.png-b6e8069b6bfd14cc79210eb71efa80ae.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqqm6"]
 size = Vector2(64, 64)
@@ -8,7 +9,8 @@ size = Vector2(64, 64)
 [node name="ObjTest" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_hywrq")
+texture_filter = 3
+texture = SubResource("CompressedTexture2D_j2g33")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1

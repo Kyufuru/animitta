@@ -10,23 +10,11 @@ size = Vector2(64, 128)
 script = ExtResource("1_2f4hb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1, 2.03125)
 texture = ExtResource("2_4d18h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
 shape = SubResource("RectangleShape2D_eh3hp")
 debug_color = Color(0, 0.701961, 0.117647, 0.419608)
-
-[node name="TimerMAct" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
-[node name="TimerSAct" type="Timer" parent="."]
-
-[node name="Mks" type="Node2D" parent="."]
-
-[node name="MkMAct" type="Marker2D" parent="Mks"]
-position = Vector2(64, 0)
-
-[connection signal="timeout" from="TimerMAct" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="TimerSAct" to="." method="_on_timer_s_act_timeout"]
