@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://xe3mynls6rt1"]
+[gd_scene load_steps=8 format=3 uid="uid://xe3mynls6rt1"]
 
 [ext_resource type="PackedScene" uid="uid://bxoc8ebekyptc" path="res://scene/player/player_test.tscn" id="1_lvyxx"]
 [ext_resource type="Script" path="res://scene/level/level_test.gd" id="1_qmriy"]
 [ext_resource type="PackedScene" uid="uid://bwaec2nsehod5" path="res://scene/physics/physics.tscn" id="4_30x5h"]
 [ext_resource type="Texture2D" uid="uid://ncyk6gimyfgj" path="res://asset/test.png" id="4_gri6n"]
+[ext_resource type="Script" path="res://scene/level/Label.gd" id="5_n8a0j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4y8p"]
 resource_name = "test"
@@ -24,12 +25,19 @@ script = ExtResource("1_qmriy")
 
 [node name="Player" parent="." instance=ExtResource("1_lvyxx")]
 position = Vector2(671, 72)
-jump_speed = 500
+jump_speed = 100
 speed = 500
-mass = 90
+mass = 5
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
+
+[node name="Label" type="Label" parent="Player/Camera2D"]
+offset_left = -32.0
+offset_top = -107.0
+offset_right = 8.0
+offset_bottom = -84.0
+script = ExtResource("5_n8a0j")
 
 [node name="Physics" parent="." instance=ExtResource("4_30x5h")]
 unique_name_in_owner = true
@@ -39,4 +47,4 @@ gravity = 10
 texture_filter = 4
 tile_set = SubResource("TileSet_by4f4")
 format = 2
-layer_0/tile_data = PackedInt32Array(262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524302, 1, 0, 524304, 1, 0, 524305, 1, 0, 262158, 1, 0, 262159, 1, 0, 196611, 1, 0, 262147, 1, 0, 262146, 1, 0, 262145, 1, 0, 524290, 1, 0)
+layer_0/tile_data = PackedInt32Array(262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262158, 1, 0, 262159, 1, 0, 262147, 1, 0, 262146, 1, 0, 262145, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262157, 1, 0, 262160, 1, 0, 262161, 1, 0, 262163, 1, 0, 262162, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262168, 1, 0, 262167, 1, 0, 196632, 1, 0, 131096, 1, 0, 65560, 1, 0, 262144, 1, 0, 196608, 1, 0, 131072, 1, 0, 65536, 1, 0, 0, 1, 0, 24, 1, 0)

@@ -17,8 +17,7 @@ config/features=PackedStringArray("4.1", "Mobile")
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/vsync/vsync_mode=0
 
 [input]
 
@@ -66,4 +65,9 @@ s_act={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=3
 renderer/rendering_method="mobile"
+
+[xr]
+
+shaders/enabled=true
