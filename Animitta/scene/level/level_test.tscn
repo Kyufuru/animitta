@@ -24,14 +24,16 @@ script = ExtResource("1_qmriy")
 
 [node name="Player" parent="." instance=ExtResource("1_lvyxx")]
 position = Vector2(671, 72)
-Velocity = 500
-Mass = 20
+jump_speed = 500
+speed = 500
+mass = 90
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 
 [node name="Physics" parent="." instance=ExtResource("4_30x5h")]
-Gravity = 50
+unique_name_in_owner = true
+gravity = 10
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 4

@@ -1,3 +1,12 @@
 extends Node2D
 
-@export var Gravity: int
+enum States {
+	IDLE,
+	JUMP,
+	HIGH_JUMP,
+	DASH,
+	ATTACK,
+}
+
+@export var gravity: int
+

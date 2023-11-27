@@ -1,37 +1,33 @@
 extends CharacterBody2D
 
+@export var cur_state: int
+
+@export var jump_speed: int
 @export var speed: int
 @export var mass: int
 
-func _ready():
-	pass
+const x_msk := Vector2(1, 0)
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	press()
-	move()
+	act(delta)
+	move(delta)
 
 ## 处理按键
 func press() -> void:
-#	# 动作
-#	if Input.is_action_pressed("m_act") and can_m_act:
-#		can_m_act = false
-#		$TimerMAct.start()
-#		m_act.emit($Mks/MkMAct.global_position)
-#
-#	if Input.is_action_pressed("s_act") and can_s_act:
-#		can_s_act = false
-#		$TimerSAct.start()
-#		s_act.emit()
-	pass
+	if Input.is_action_just_pressed("jump"):
+		cur_state = %Physics.States.JUMP
 
-## 处理移动
-func move() -> void:
-	# 移动
-	velocity = speed * Input.get_vector(
-			"left","right","up","down")
-	
-	# 重力
-	velocity.y += mass * $"../Physics".Gravity
-	
+
+func act(_dt: float) -> void:
+	if cur_state == %Physics.States.JUMP:
+		velocity.y += jump_speed * %Physics.gravity
+
+
+## 处理物理移动
+func move(_dt: float) -> void:
+	velocity = x_msk * speed * Input.get_vector(
+		"left","right","up","down") # 移动
+	velocity.y += mass * %Physics.gravity # 重力
 	move_and_slide()
