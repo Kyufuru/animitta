@@ -22,7 +22,7 @@ func press() -> void:
 
 func act(_dt: float) -> void:
 	if cur_state == %Physics.States.JUMP:
-		velocity.y += jump_speed * %Physics.gravity
+		velocity.y -= jump_speed * %Physics.gravity
 
 
 ## 处理物理移动
