@@ -1,12 +1,6 @@
 extends CharacterBody2D
 
-enum States {
-	IDLE,
-	JUMP,
-	HIGH_JUMP,
-	DASH,
-	ATTACK,
-}
+enum States {IDLE, JUMP, DASH, ATK}
 const x_msk := Vector2(1, 0)
 
 @export var cur_state: int

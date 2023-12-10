@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwaec2nsehod5"]
-
-[ext_resource type="Script" path="res://scene/physics/physics.gd" id="1_h2au5"]
-
-[node name="Physics" type="Node2D"]
-script = ExtResource("1_h2au5")
