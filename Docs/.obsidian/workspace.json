@@ -1,0 +1,148 @@
+{
+  "main": {
+    "id": "ecbb3fde258ea7b3",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc53a91d07d68849",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e9b7d1e68b1acc9d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "笔记/Godot - GdScript.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b8508d2921226a6a",
+    "type": "split",
+    "children": [
+      {
+        "id": "21898f1c6ed55c3d",
+        "type": "tabs",
+        "dimension": 45.47872340425531,
+        "children": [
+          {
+            "id": "6d2963db2b23edd2",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "c6ef171d8b3607b7",
+        "type": "tabs",
+        "dimension": 54.52127659574469,
+        "children": [
+          {
+            "id": "2711402848bec8e6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byCreatedTime"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "1907dde4b4945ad6",
+    "type": "split",
+    "children": [
+      {
+        "id": "a1308b334b70509d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c83732a61235853a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "笔记/Godot - GdScript.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "templates:插入模板": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "random-note:开始漫游笔记": false
+    }
+  },
+  "active": "e9b7d1e68b1acc9d",
+  "lastOpenFiles": [
+    "笔记/Godot - 粒子.md",
+    "笔记/Godot - 坐标与相机.md",
+    "笔记/Godot - 界面交互.md",
+    "笔记/TODO 策划.md",
+    "笔记/任务设计.md",
+    "笔记/Godot - 信号.md",
+    "笔记/Godot - 动画.md",
+    "笔记/杂项.md",
+    "模板/通用.md",
+    "笔记/Godot - 简介.md",
+    "笔记/Godot - 动态创建场景.md",
+    "笔记/美术概念.md",
+    "笔记/Godot - 物理.md",
+    "笔记/Godot - 帧与帧时长.md",
+    "笔记/Godot - 颜色.md",
+    "笔记/Godot.md",
+    "笔记/Godot - 脚本与节点.md",
+    "笔记/Godot - 光照.md",
+    "笔记/世界观笔记.md",
+    "笔记/Godot - 图块集物理.md",
+    "笔记/吉凶悔吝.md",
+    "笔记/游戏简介.md",
+    "笔记/Godot - 用户界面.md",
+    "模板/Godot 笔记.md",
+    "笔记/Godot - 图块集.md",
+    "笔记/Godot - GdScript.md",
+    "附件/Pasted image 20231216113846.png",
+    "附件",
+    "参考",
+    "模板",
+    "参考",
+    "笔记",
+    "日志",
+    "Godot笔记",
+    "策划/游戏简介.txt",
+    "策划/杂项.txt",
+    "策划/吉凶悔吝.txt"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "accentColor": "",
+  "cssTheme": "deeper work",
+  "textFontFamily": "Fusion Pixel,Fira Code Retina",
+  "monospaceFontFamily": "Fira Code Retina,Fusion Pixel",
+  "interfaceFontFamily": "Fusion Pixel,Fira Code Retina",
+  "baseFontSize": 17,
+  "enabledCssSnippets": [
+    "heading"
+  ]
+}
