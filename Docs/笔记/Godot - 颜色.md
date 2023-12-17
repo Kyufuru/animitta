@@ -6,4 +6,7 @@
 
 ---
 
-- `Color()` 创建颜色(Color)
+- 创建颜色(Color): 
+	- `Color(r,g,b,a)`
+	- `Color(code: str)` 
+- 设置颜色: `Node.modulate = Color`
