@@ -1,31 +1,22 @@
 extends CharacterBody2D
 
-const x_msk := Vector2(1, 0)
+@export var v: Vector2
 
-@export var cur_state: int
-@export var jump_speed: int
-@export var speed: int
-@export var mass: int
-
-var g: int
-
-func _ready():
-	g = %Physics.gravity
+var g: int = $global/global.gravity
 
 func _physics_process(_delta):
-	var dir = Input.get_vector("left","right","up","down")
+	var s = Input.get_vector("left","right","up","down")
+	var is_jump = Input.is_action_just_pressed("jump")
+	var is_atk = Input.is_action_just_pressed("m_act")
+	var is_dash = Input.is_action_just_pressed("s_act")
+
+	velocity.x = s.x * v.x
+
 	if not is_on_floor():
-		velocity.y += mass * g # 重力
+		velocity.y += g
+	elif is_jump:
+		velocity.y -= v.y
 	else:
 		velocity.y = 0
-		if Input.is_action_just_pressed("jump"):
-			velocity.y -= jump_speed * g
-	
-	
-	#if Input.is_action_just_pressed("s_act"):
-		#
-		
-	velocity.x = speed * dir.x # 移动
-	
+
 	move_and_slide()
-	
