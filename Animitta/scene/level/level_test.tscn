@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://xe3mynls6rt1"]
+[gd_scene load_steps=6 format=3 uid="uid://xe3mynls6rt1"]
 
 [ext_resource type="PackedScene" uid="uid://bxoc8ebekyptc" path="res://scene/player/player_test.tscn" id="1_lvyxx"]
 [ext_resource type="Script" path="res://scene/level/level_test.gd" id="1_qmriy"]
-[ext_resource type="Script" path="res://scene/level/physics.gd" id="4_55xay"]
 [ext_resource type="Texture2D" uid="uid://ncyk6gimyfgj" path="res://asset/test.png" id="4_gri6n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4y8p"]
@@ -24,9 +23,6 @@ script = ExtResource("1_qmriy")
 
 [node name="Player" parent="." instance=ExtResource("1_lvyxx")]
 position = Vector2(671, 72)
-jump_speed = 100
-speed = 500
-mass = 5
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
@@ -35,8 +31,4 @@ position_smoothing_enabled = true
 texture_filter = 4
 tile_set = SubResource("TileSet_by4f4")
 format = 2
-layer_0/tile_data = PackedInt32Array(262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262158, 1, 0, 262159, 1, 0, 262147, 1, 0, 262146, 1, 0, 262145, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262157, 1, 0, 262160, 1, 0, 262161, 1, 0, 262163, 1, 0, 262162, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262168, 1, 0, 262167, 1, 0, 196632, 1, 0, 131096, 1, 0, 65560, 1, 0, 262144, 1, 0, 196608, 1, 0, 131072, 1, 0, 65536, 1, 0, 0, 1, 0, 24, 1, 0, 524299, 1, 0, 524300, 1, 0, 720906, 1, 0, 720905, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0)
-
-[node name="Physics" type="Node2D" parent="."]
-unique_name_in_owner = true
-script = ExtResource("4_55xay")
+layer_0/tile_data = PackedInt32Array(262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262158, 1, 0, 262159, 1, 0, 262147, 1, 0, 262146, 1, 0, 262145, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262157, 1, 0, 262160, 1, 0, 262161, 1, 0, 262163, 1, 0, 262162, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262168, 1, 0, 262167, 1, 0, 196632, 1, 0, 131096, 1, 0, 65560, 1, 0, 262144, 1, 0, 196608, 1, 0, 131072, 1, 0, 65536, 1, 0, 0, 1, 0, 24, 1, 0, 524300, 1, 0, 720906, 1, 0, 720905, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 589837, 1, 0, 393227, 1, 0)

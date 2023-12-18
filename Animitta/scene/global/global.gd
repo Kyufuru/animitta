@@ -1,3 +1,3 @@
 extends Node
 
-const gravity: int = 10
+const gravity: int = 50

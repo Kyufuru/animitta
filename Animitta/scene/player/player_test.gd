@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @export var v: Vector2
 
-var g: int = $global/global.gravity
+var g: int = Global.gravity
+var i: int = 0
 
 func _physics_process(_delta):
 	var s = Input.get_vector("left","right","up","down")
@@ -11,12 +12,17 @@ func _physics_process(_delta):
 	var is_dash = Input.is_action_just_pressed("s_act")
 
 	velocity.x = s.x * v.x
-
+		
 	if not is_on_floor():
 		velocity.y += g
 	elif is_jump:
 		velocity.y -= v.y
 	else:
+		s.y = 0
 		velocity.y = 0
+
+	i += 1
+	if i % 20 == 0:
+		print(velocity)
 
 	move_and_slide()
