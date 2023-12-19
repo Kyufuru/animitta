@@ -23,6 +23,10 @@ Global="*res://scene/global/global.gd"
 
 window/vsync/vsync_mode=0
 
+[editor]
+
+script/templates_search_path="res://addons/simplefsm/script_templates"
+
 [input]
 
 up={

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxoc8ebekyptc"]
+[gd_scene load_steps=5 format=3 uid="uid://bxoc8ebekyptc"]
 
 [ext_resource type="Script" path="res://scene/player/player_test.gd" id="1_2f4hb"]
 [ext_resource type="Texture2D" uid="uid://ncyk6gimyfgj" path="res://asset/test.png" id="2_4d18h"]
+[ext_resource type="Script" path="res://scene/state/state_machine.gd" id="3_rrspe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eh3hp"]
 size = Vector2(58, 119)
@@ -19,3 +20,6 @@ shape = SubResource("RectangleShape2D_eh3hp")
 position = Vector2(0, 1)
 scale = Vector2(1, 2.03125)
 texture = ExtResource("2_4d18h")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_rrspe")

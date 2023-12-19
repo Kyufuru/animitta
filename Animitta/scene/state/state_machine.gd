@@ -1,37 +1,6 @@
-链接: [[程序]] [[输入]]
-
-标签: #程序 #输入
-
-创建时间: 2023-12-18 13:22
-
----
-
-- 有限状态机
-1. 定义状态类
-```gdscript
 extends Node
 
-class_name State
-
-signal change
-
-
-# 进入状态时触发
-func enter() -> void:
-	pass
-
-# 离开状态时触发
-func exit(to: String) -> void:
-	change.emit(to)
-
-# 在状态中按帧执行
-func physics_process(_delta: float) -> void:
-	pass
-```
-2. 定义状态机类, 用于表示状态操作与转移
-```gdscript
-extends Node
-
+# 状态机类, 用于状态管理及转移
 class_name StateMachine
 
 # 当前状态
@@ -49,10 +18,13 @@ func _ready() -> void:
 			# 连接转移信号
 			sta.change.connect(_on_changed)
 
+func _physics_process(delta: float) -> void:
+	if cur_sta:
+		cur_sta.physics_process(delta)
+
 # 状态转移
 func _on_changed(to : String) -> void:
 	remove_child(cur_sta)
 	cur_sta = stas[name]
 	add_child(cur_sta)
 	cur_sta.enter()
-```
