@@ -23,6 +23,7 @@ script = ExtResource("1_qmriy")
 
 [node name="Player" parent="." instance=ExtResource("1_lvyxx")]
 position = Vector2(671, 72)
+floor_constant_speed = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
